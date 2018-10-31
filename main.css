@@ -1,0 +1,95 @@
+body, html{
+    height: 100%;
+}
+
+body{
+    background: #C9EDFF;
+    font-family: 'Montserrat';
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 5em;
+    text-shadow: 5px 5px #C9EDFF, 8px 8px rgba(0,0,0,.19);
+    margin: 0;
+    animation: slide-tr 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+h3{
+    font-size: 1,5em;
+    margin: 0 25px;
+}
+
+h3:before, h3:after{
+    content: " ";
+    position: absolute;
+    border-top: 2px solid rgba(0,0,0,.3);
+}
+
+h3:nth-of-type(1):before{
+    width: 3%;
+    height: 4px;
+    margin: 3% 0 0 -4%;
+}
+h3:nth-of-type(1):after{
+    width: 35%;
+    height: 4px;
+    margin: 3% 0 0 2%;
+}
+
+h3:nth-of-type(2){
+    float: right;
+    margin-top: -5%;
+}
+h3:nth-of-type(2):before{
+    width: 130%;
+    height: 4px;
+    margin: 6% 0 0 -135%;
+}
+h3:nth-of-type(2):after{
+    width: 10%;
+    height: 4px;
+    margin: 6% 0 0 3%;
+}
+
+h1,h3{
+    transform: matrix(1.00, -0.25, 0.00, 1.00, 0,0);
+    -ms-transform: matrix(1.00,-0.25,0.00,1.00,0,0);
+    -webkit-transform:matrix(1.00,-0.25,0.00,1.00,0,0);
+    text-transform: uppercase;
+}
+
+#container:before{
+    content: " ";
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background: rgba(0,0,0,0.08);
+    position: fixed;
+    height: 700px;
+    width: 700px;
+    top: 0; left: 0; bottom:0; right:0;
+    margin: auto;
+    animation: scale-up-hor-center 1s cubic-bezier(0.300, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-hor-center {
+    0% {
+        transform: scaleX(0.4) matrix(1.00, -0.25, 0.00, 1.00, 0, 0);
+    }
+    100% {
+        transform: scaleX(1) matrix(1.00, -0.25, 0.00, 1.00, 0, 0);
+    }
+}
+
+@keyframes slide-tr {
+    0% {
+        transform: translateY(30px) translateX(-100px) matrix(1.00, -0.25, 0.00, 1.00, 0, 0);
+    }
+    100%{
+        transform: translateY(0) translateX(0) matrix(1.00, -0.25, 0.00, 1.00, 0, 0);
+    }
+}
